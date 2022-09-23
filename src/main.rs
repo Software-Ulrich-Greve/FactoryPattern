@@ -55,8 +55,8 @@ struct Autofabrik{
 impl Autofabrik{
     fn new(autos: Autos, _ps: u16) -> Box<dyn Auto>{
         match autos{
-            Autos::Lkw => Box::new(LKW{ps: _ps}),
-            Autos::Pkw => Box::new(PKW{ps: _ps}),
+            Autos::Lkw => Box::new(LKW::new(_ps)),
+            Autos::Pkw => Box::new(PKW::new(_ps)),
         }
     }
 }
@@ -64,9 +64,15 @@ impl Autofabrik{
 
 
 fn main() {
-    let _auto = Autofabrik::new(Autos::Lkw, 300);
+    let _auto1 = Autofabrik::new(Autos::Lkw, 300);
 
-    _auto.say_who_am_i();
+    print!("Ich habe {0} PS: ", _auto1.get_ps());
 
-    println!("Ich habe {0} PS!", _auto.get_ps())
+    _auto1.say_who_am_i();
+
+    let _auto2 = Autofabrik::new(Autos::Pkw, 80);
+
+    print!("Ich habe {0} PS: ", _auto2.get_ps());
+
+    _auto2.say_who_am_i();
 }
