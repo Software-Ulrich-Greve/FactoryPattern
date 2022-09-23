@@ -64,15 +64,15 @@ impl Autofabrik{
 
 
 fn main() {
-    let _auto1 = Autofabrik::new(Autos::Lkw, 300);
+    let auto1 = Autofabrik::new(Autos::Lkw, 300);
 
-    print!("Ich habe {0} PS: ", _auto1.get_ps());
+    print!("Ich habe {0} PS: ", auto1.get_ps());
 
-    _auto1.say_who_am_i();
+    auto1.say_who_am_i();
 
-    let _auto2 = Autofabrik::new(Autos::Pkw, 80);
+    let auto2 = Autofabrik::new(Autos::Pkw, 80);
 
-    print!("Ich habe {0} PS: ", _auto2.get_ps());
+    print!("Ich habe {0} PS: ", auto2.get_ps());
 
-    _auto2.say_who_am_i();
+    auto2.say_who_am_i();
 }
